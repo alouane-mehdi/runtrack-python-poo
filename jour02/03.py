@@ -1,28 +1,28 @@
 class livre:
     def __init__(self,titre,auteur,Page):
-        self.titre=titre
-        self.auteur=auteur
-        self.Page=Page
-        self.disponible=True
+        self.__titre=titre
+        self.__auteur=auteur
+        self.__Page=Page
+        self.__disponible=True
     def modifTitre(self,titre):
-        self.titre=titre
+        self.__titre=titre
     def modifAuteur(self,auteur):
-        self.auteur=auteur
+        self.__auteur=auteur
     def modifPage(self,Page):
         if Page >0 :
-            self.Page=Page
+            self.__Page=Page
         else:
             print("Erreur : La page doit etre un entier positif.")      
     def afficher(self):
-        print(f"Titre : {self.titre} , Auteur: {self.auteur} , Nombre de page : {self.Page}. ")
+        print(f"Titre : {self.__titre} , Auteur: {self.__auteur} , Nombre de page : {self.__Page}. ")
         
         
     def verification(self):
-        return self.disponible
+        return self.__disponible
     def emprunter(self):
         if self.verification():         
             print("Livre emprunté !") 
-            self.disponible == False
+            self.__disponible == False
         else:
             print("Ce livre n'est pas disponible")
     def rendre(self):
